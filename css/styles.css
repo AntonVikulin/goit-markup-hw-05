@@ -638,7 +638,7 @@ button {
 /* modal window */
 
 .backdrop {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -646,8 +646,13 @@ button {
 
   background: rgba(0, 0, 0, 0.2);
 }
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
 
 .modal {
+  position: absolute;
   width: 528px;
   height: 581px;
   top: 50%;
@@ -658,4 +663,16 @@ button {
   border-radius: 4px;
 
   transform: translate(-50%, -50%);
+}
+
+.modal > button {
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background: var(--color-2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
 }
